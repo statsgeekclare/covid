@@ -11,6 +11,7 @@ library(extrafont)
 library(ggrepel)
 library(gganimate)
 
+#using code from Colin Angus (@VictimofMaths)
 #Start with LA level cases for the whole of the UK
 cases <- tempfile()
 url <- "https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&metric=newCasesBySpecimenDateRollingRate&format=csv"
@@ -77,10 +78,7 @@ plot2 <- ggplot()+
        caption="Data from UKHSA, Cartogram from @carlbaker/House of Commons Library\nPlot by @VictimOfMaths")
 
 
-agg_tiff("Outputs/COVIDCasesLTLAChangeCartogram.tiff", units="in", width=9, height=10, res=800)
-plot2
-dev.off()
-
 agg_png("Outputs/COVIDCasesLTLAChangeCartogram.png", units="in", width=9, height=10, res=800)
 plot2
 dev.off()
+
